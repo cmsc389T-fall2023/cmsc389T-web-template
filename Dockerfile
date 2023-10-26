@@ -4,3 +4,12 @@
 #expose port 8080 and run the app
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
+
+FROM node:10-alpine
+EXPOSE 8080
+ADD package*.json ./
+RUN npm install
+COPY ./  ./
+COPY IMG-20230820-WA0023-01-01_Original.jpeg ./
+COPY logo.png ./
+CMD ["node", "app.js"]
